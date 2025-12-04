@@ -1,0 +1,75 @@
+/*
+====================================
+7. Estilos da Página Inicial (Menu)
+====================================
+*/
+
+.menu-inicial {
+    text-align: center;
+    padding: 60px 5%;
+}
+
+.menu-inicial h1 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.menu-inicial h2 {
+    color: var(--cor-texto);
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.opcoes-menu {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    justify-content: center;
+    gap: 20px; /* Espaço entre os botões/links */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.menu-link {
+    /* Estilizando os links como "botões" ou blocos interativos */
+    background-color: var(--cor-clara);
+    color: var(--cor-escura);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-basis: 280px; /* Define uma largura base para cada bloco */
+    text-align: center;
+    text-decoration: none; /* Remove sublinhado */
+}
+
+/* Efeito de hover */
+.menu-link:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+}
+
+/* Ajustes para Dark Mode */
+body.dark-mode .menu-link {
+    background-color: var(--cor-clara); /* Cor de fundo escura, como os formulários */
+    color: var(--cor-texto); /* Cor de texto clara */
+    box-shadow: var(--sombra);
+}
+
+body.dark-mode .menu-link:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-escura);
+}
+
+
+/* Responsividade para o menu */
+@media (max-width: 768px) {
+    .menu-link {
+        flex-basis: 90%; /* Ocupa quase a largura total em telas menores */
+    }
+}

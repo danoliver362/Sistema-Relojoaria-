@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - Relojoaria</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a>RELOJOARIA</a>
+    </div>
+    <div class="header-right"> 
+        <nav>
+            <a href="login.html">SAIR</a> </nav>
+        <button id="darkModeToggle" class="dark-mode-toggle" style="background: none; border: none; cursor: pointer; color: var(--cor-escura); font-size: 1.2rem;">
+            ☀️
+        </button>
+    </div>
+</header>
+
+<main class="menu-inicial">
+    <h1>Bem-Vindo!</h1>
+    
+    <h2>Escolha uma opção:</h2>
+    
+    <div class="opcoes-menu">
+        <a href="cadastrarCliente.php" class="menu-link">Cadastrar Cliente</a>
+        <a href="CadastrarRelogio.php" class="menu-link">Cadastrar Relógio</a>
+        <a href="CadastrarOS.php" class="menu-link">Nova Ordem de Serviço</a>
+        <a href="ListagemClientes.php" class="menu-link">Listar Clientes</a>
+        <a href="ListagemRelogio.php" class="menu-link">Listar Relógios</a>
+        <a href="ListagemOrdem.php" class="menu-link">Listar Ordens de Serviço</a>
+    </div>
+</main>
+
+<footer class="footer"></footer>
+
+<script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const currentMode = localStorage.getItem('darkMode');
+
+    // 1. Aplica o modo salvo no localStorage ou o modo padrão
+    if (currentMode === 'enabled') {
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '🌙';
+    }
+
+    // 2. Listener para o clique no botão
+    toggleButton.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            // Desativar Dark Mode
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+            toggleButton.textContent = '☀️';
+        } else {
+            // Ativar Dark Mode
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+            toggleButton.textContent = '🌙';
+        }
+    });
+</script>
+
+</body>
+</html>
